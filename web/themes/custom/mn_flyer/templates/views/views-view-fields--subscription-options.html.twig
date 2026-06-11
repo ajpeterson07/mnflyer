@@ -1,0 +1,23 @@
+{# 
+  Custom layout for our 1-Year and 2-Year Subscription pricing cards 
+#}
+<div class="border border-slate-200 rounded-xl p-6 bg-white shadow-sm flex flex-col justify-between hover:shadow-md transition">
+  <div>
+    <h3 class="text-xl font-bold text-slate-900 tracking-tight mb-2">
+      {{ fields.title.content }}
+    </h3>
+    <div class="text-3xl font-extrabold text-slate-900 my-4">
+      {{ fields.price.content }}
+    </div>
+    {% if fields.billing_schedule %}
+      <div class="text-sm text-slate-500 mb-4">
+        Billing cycle: {{ fields.billing_schedule.content }}
+      </div>
+    {% endif %}
+  </div>
+  
+  <div class="mt-6">
+    {# This renders your functional 'Add to Cart' / buy button #}
+    {{ fields.rendered_entity.content }}
+  </div>
+</div>

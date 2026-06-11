@@ -1,0 +1,25 @@
+name: mn_flyer
+type: theme
+'base theme': stable9
+version: 1.0.0
+libraries:
+  - mn_flyer/global-scripts
+  - mn_flyer/global-styling
+  - mn_flyer/base
+  - mn_flyer/messages
+  - core/normalize
+description: ''
+core_version_requirement: ^11
+generator: 'starterkit_theme:11.3.5'
+regions:
+  header: 'Header'
+  explore_departments: 'Explore Departments'
+  primary_menu: 'Primary Menu'
+  secondary_menu: 'Secondary Menu'
+  breadcrumb: 'Breadcrumbs'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  content: 'Main Content'
+  sidebar_first: 'Sidebar First'
+  sidebar_second: 'Sidebar Second'
+  footer: 'Footer'

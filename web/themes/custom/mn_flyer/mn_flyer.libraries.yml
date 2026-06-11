@@ -1,0 +1,7 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+global-scripts:
+  js:
+    https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js: { type: external, attributes: { defer: true } }      

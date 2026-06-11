@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@source "../templates/**/*.html.twig";
+
+/* Point it directly to the node_modules folder */
+@plugin "../node_modules/@tailwindcss/typography";
+@source "../*.theme";
+
+/* 2. Load the Typography Plugin */
+/*@plugin "@tailwindcss/typography";*/
+@layer base {
+  a {
+    /* 1. Identification: Color + Underline offset */
+    @apply text-blue-700 underline underline-offset-4 decoration-2 decoration-blue-200 transition-all duration-300;
+  }
+
+  a:hover {
+    /* 2. Modern Hover: The "Lift" effect */
+    @apply text-blue-900 decoration-blue-700 underline-offset-2;
+  }
+
+  /* Focus state for accessibility (keyboard users) */
+  a:focus-visible {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 rounded-sm;
+  }
+  a[href^="http"]::after {
+  content: "↗";
+  @apply ml-1 text-xs opacity-50 no-underline inline-block;
+  }
+  /* Target common form inputs */
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    @apply w-full rounded-md border border-slate-300 bg-white px-4 py-2 text-slate-900 shadow-sm transition-all;
+    @apply focus:border-sky-600 focus:ring-2 focus:ring-sky-600/20 focus:outline-none;
+    @apply placeholder:text-slate-400;
+  }
+ 
+  /* Style the labels so they aren't squashed */
+  label {
+    @apply mb-1 block text-sm font-semibold text-slate-700;
+  }
+  body:not([class*="node--type-"]) {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  body:not([class*="node--type-"])::before {
+    /* Leave this exactly as an empty string! */
+    content: ""; 
+    
+    /* This locks it in place behind your cards */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    pointer-events: none;
+    
+    /*  ADD YOUR IMAGE SOURCE HERE  */
+    /* background-image: url('/sites/default/files/2026-05/mainback.png'); */
+    
+    /* This keeps the image sharp, centered, and scaled perfectly */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* Dial this up or down to make it as subtle or strong as you want */
+    opacity: 0.15; 
+  }
+}
+/* Style all primary submit buttons */
+input[type="submit"], 
+button[type="submit"] {
+  @apply cursor-pointer rounded-md bg-sky-700 px-6 py-2 text-sm font-bold text-white transition-colors hover:bg-sky-800 focus:ring-4 focus:ring-sky-200;
+}
+/* in input.css */
+input[type="text"], 
+input[type="email"], 
+input[type="password"],
+textarea,
+select {
+  @apply w-full px-4 py-2.5 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-600;
+}
+@layer components {
+  /* The Base Button - Handles shape, font, and transitions */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2.5 rounded-md font-semibold transition-all duration-200 active:scale-95 cursor-pointer no-underline;
+  }
+
+  /* The Primary Action (Brand Color) */
+  .btn-primary {
+    @apply bg-blue-700 text-white hover:bg-blue-800 shadow-md hover:shadow-lg ring-offset-2 focus:ring-2 focus:ring-blue-500;
+  }
+
+  /* The Secondary/Outline Action */
+  .btn-outline {
+    @apply border-2 border-blue-700 text-blue-700 hover:bg-blue-50 hover:text-blue-800;
+  }
+
+  /* The Ghost/Tertiary Action (Subtle) */
+  .btn-ghost {
+    @apply text-gray-600 hover:bg-gray-100 hover:text-gray-900;
+  }
+  /* The Logo itself */
+  .mn-flyer-logo {
+    @apply inline-flex flex-col uppercase font-sans font-black leading-[0.8] tracking-tighter;
+  }
+
+  /* Version for the Transparent Header */
+  .hero-logo-main {
+    @apply text-white text-4xl md:text-6xl drop-shadow-md;
+  }
+  
+  .hero-logo-sub {
+    @apply text-blue-400 text-xl md:text-2xl self-end pt-1 drop-shadow-sm;
+  }
+  /* 1. Resets the menu list to row layout and strips bullet points */
+  ul.menu {
+    @apply flex items-center gap-x-1 sm:gap-x-2 list-none m-0 p-0;
+  }
+
+  /* 2. Styles every default link into a clean interactive button target */
+  ul.menu li.menu-item a {
+    @apply inline-flex items-center rounded-xl px-4 py-2.5 text-sm font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 ease-in-out no-underline;
+  }
+
+  /* 3. Automatically catches Drupal's active page class for high-end styling */
+  ul.menu li.menu-item a.is-active {
+    @apply bg-blue-50 font-semibold text-blue-700 hover:bg-blue-100;
+  }
+  /* 1. Increased the gap between items (from gap-x-1 to gap-x-4) */
+  ul.menu {
+    @apply flex items-center gap-x-3 sm:gap-x-4 list-none m-0 p-0;
+  }
+
+  /* 2. Increased font size (text-sm -> text-lg) and padding (px-4 py-2.5 -> px-6 py-3.5) */
+  ul.menu li.menu-item a {
+    @apply inline-flex items-center rounded-2xl px-6 py-3.5 text-lg font-medium text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all duration-200 ease-in-out no-underline;
+  }
+
+  /* 3. Kept the active state working perfectly with the new scale */
+  ul.menu li.menu-item a.is-active {
+    @apply bg-blue-50 font-semibold text-blue-700 hover:bg-blue-100;
+  }
+  /* Targets Drupal's standard system error message wrapper */
+  .messages.messages--error {
+    @apply mx-auto my-6 max-w-2xl rounded-2xl bg-rose-50/90 p-4 text-center text-sm font-medium text-rose-800 border border-rose-100 backdrop-blur-sm shadow-sm list-none;
+  }
+
+  /* Ensures any list items inside the error message (like multiple fields validation) are also centered and unstyled */
+  .messages.messages--error ul,
+  .messages.messages--error li {
+    @apply list-none m-0 p-0 text-center justify-center flex flex-col items-center font-medium text-rose-700;
+  }
+  /* Targets Drupal's main layout container wrapper */
+  .layout-container, 
+  main,
+  #page-wrapper {
+    @apply pb-32 md:pb-40;
+  }
+  /* 1. Targets the wrapper containers around Drupal buttons to center them */
+  .form-actions,
+  .custom-add-to-cart-wrapper,
+  .custom-register-form-wrapper .form-actions {
+    @apply flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 mb-4 w-full;
+  }
+
+  /* 2. Styles the actual buttons with generous breathing room and smooth scaling */
+  .form-actions input[type="submit"],
+  .form-actions button,
+  .custom-add-to-cart-wrapper input[type="submit"] {
+    @apply w-full sm:w-auto min-w-[200px] text-center rounded-xl bg-blue-600 px-6 py-3.5 text-base font-semibold text-white shadow-md hover:bg-blue-500 hover:shadow-lg active:scale-[0.98] transition-all cursor-pointer;
+  }
+
+  /* 3. Styles secondary/cancel buttons if they appear next to primary buttons */
+  .form-actions a.button,
+  .form-actions input[type="submit"].secondary {
+    @apply w-full sm:w-auto text-center rounded-xl bg-slate-100 px-6 py-3.5 text-base font-medium text-slate-600 hover:bg-slate-200 transition-all no-underline;
+  }
+  /* 1. Keeps your menu row nicely spaced out */
+  ul.menu {
+    @apply flex items-center gap-x-3 sm:gap-x-4 list-none m-0 p-0;
+  }
+
+  /* 2. Overrides the links to mimic your premium primary button styles exactly */
+  ul.menu li.menu-item a {
+    @apply inline-flex items-center justify-center text-center rounded-xl bg-blue-600 px-6 py-3.5 text-base font-semibold text-white shadow-md hover:bg-blue-500 hover:shadow-lg active:scale-[0.98] transition-all duration-200 ease-in-out no-underline cursor-pointer min-w-[140px];
+  }
+
+  /* 3. High-end Active Page State: Gives the page they are currently on a distinct "Pressed/Inverted" or darker appearance */
+  ul.menu li.menu-item a.is-active {
+    @apply bg-slate-900 text-white shadow-inner hover:bg-slate-800 border border-slate-950;
+  }
+  /* 1. Sets up the main row and opens up the gap spacing */
+  ul.menu {
+    @apply flex items-center gap-x-4 sm:gap-x-6 list-none m-0 p-0;
+  }
+
+  /* 2. Softens the standard menu links into clean, low-profile text buttons */
+  ul.menu li.menu-item a {
+    @apply inline-flex items-center justify-center text-center rounded-xl px-5 py-3 text-base font-semibold text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-all duration-200 ease-in-out no-underline cursor-pointer;
+  }
+
+  /* 3. High-end Active Page State for the standard text buttons */
+  ul.menu li.menu-item a.is-active {
+    @apply bg-slate-100 text-slate-900 font-bold;
+  }
+
+  /* 4. THE HERO CHANGE: Targets the very last menu item (your event/action button) */
+  ul.menu li.menu-item:last-child {
+    @apply ml-4 sm:ml-6; /* Injects a physical structural break to separate it from the rest */
+  }
+
+  /* 5. Transforms that final button into a high-visibility primary action item */
+  ul.menu li.menu-item:last-child a {
+    @apply bg-blue-600 text-white shadow-md px-6 py-3.5 rounded-xl hover:bg-blue-500 hover:shadow-lg active:scale-[0.98] min-w-[150px];
+  }
+
+  /* 6. Active state styling if they are currently on that specific event page */
+  ul.menu li.menu-item:last-child a.is-active {
+    @apply bg-slate-900 text-white shadow-inner hover:bg-slate-800 border border-slate-950;
+  }
+}
+.test-mapping { color: red; }
+/* Modernizing Drupal's default search input */
+.form-search {
+  @apply w-full pl-6 pr-12 py-4 bg-slate-900/40 backdrop-blur-md 
+         text-white placeholder-slate-400 font-light text-lg 
+         rounded-2xl border border-white/10 outline-none 
+         transition-all duration-300 ring-0 
+         focus:border-blue-500 focus:bg-slate-900/80 
+         focus:ring-4 focus:ring-blue-500/20 
+         appearance-none;
+}
+
+/* Kills the stubborn native browser 'X' clear button in Safari/Chrome */
+.form-search::-webkit-search-cancel-button {
+  @apply appearance-none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

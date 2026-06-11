@@ -1,0 +1,6 @@
+/vendor/
+/node_modules/
+/web/sites/default/files/
+/web/sites/default/settings.local.php
+.ddev/
+.DS_Store

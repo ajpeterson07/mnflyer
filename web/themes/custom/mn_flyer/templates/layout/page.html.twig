@@ -1,0 +1,211 @@
+{#
+/**
+ * @file
+ * Theme override to display a single page.
+ */
+#}
+
+<div class="layout-container min-h-screen flex flex-col bg-slate-50 pb-24">
+
+  <header role="banner" class="w-full">
+    {# Site Branding Banner — Slimmed and tightened #}
+    <div class="w-full bg-gradient-to-b from-slate-950 via-slate-900 to-slate-800 flex flex-col justify-center items-center text-center px-4 py-8 md:py-10 shadow-xl border-b border-white/5">
+      
+      {# 1. The Sherm Booen Legacy Tagline #}
+      <span class="text-white font-medium text-xs md:text-sm uppercase tracking-[0.25em] md:tracking-[0.4em] mb-2 opacity-90 drop-shadow-sm">
+        Continuing the Legacy of Sherm Booen
+      </span>
+
+      {# 2. Main Title Layout Wrapper #}
+      <div class="flex items-start text-white select-none">
+        
+        {# Massive Custom Serif 'M' #}
+        <span class="font-serif font-black text-5xl md:text-6xl lg:text-7xl leading-[0.8] tracking-tighter">
+          M
+        </span>
+
+        {# Rest of MINNESOTA Layout #}
+        <div class="flex flex-col items-start pl-0.5">
+          <span class="font-serif font-bold text-3xl md:text-4xl lg:text-5xl leading-[0.85] tracking-tight border-b-4 border-white pb-1 uppercase">
+            innesota
+          </span>
+        </div>
+
+        {# Spacing Gap & FLYER #}
+        <span class="font-serif font-light text-3xl md:text-4xl lg:text-5xl leading-[0.85] tracking-tight uppercase pl-3 md:pl-5">
+          Flyer
+        </span>
+
+      </div>
+    </div>
+
+    {# Alpine.js Overlay Menu Nav #}
+    {# Full-width background strip matching the slate button #}
+    <div class="w-full bg-slate-800 border-b border-white/10 shadow-md">
+      <div x-data="{ open: false }" class="relative max-w-7xl mx-auto px-4">
+        
+        <button @click="open = true" class="inline-flex items-center gap-4 text-white font-[950] text-2xl uppercase tracking-tighter leading-none bg-slate-800 hover:bg-slate-700 px-12 py-4 transition-all duration-300 cursor-pointer border-x border-white/10 hover:scale-105 whitespace-nowrap min-w-max group">
+          <span>Explore</span>
+          <svg class="h-4 w-4 shrink-0 transform text-slate-400 transition-transform duration-300 ease-out group-hover:translate-x-2 group-hover:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <template x-teleport="body">
+          <div 
+            x-show="open" 
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="fixed inset-0 z-[100] flex items-center justify-center p-6 lg:p-20"
+            style="display: none;"
+          >
+            <div class="absolute inset-0 bg-slate-900/90 backdrop-blur-xl" @click="open = false"></div>
+
+            <button @click="open = false" class="absolute top-10 right-10 text-white hover:rotate-90 transition-transform duration-300">
+              <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="relative w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-32 max-h-[85vh] overflow-y-auto pr-2">
+              
+              {# Column 1: Dynamic Taxonomy Departments with Self-Contained Hover Scroll #}
+              <div class="bg-slate-900/40 p-6 rounded-xl flex flex-col h-full max-h-[70vh]">
+                <h2 class="text-blue-500 text-xs font-black uppercase tracking-[0.3em] mb-8 border-b border-blue-500/30 pb-4">
+                  Departments
+                </h2>
+                
+                {% if page.explore_departments %}
+                  {# Bounded container clipping bleeding carousels #}
+                  <div class="relative w-full overflow-hidden flex-grow group/carousel">
+                    
+                    {# Scrollable Strip #}
+                    <div 
+                      x-ref="scrollContainer"
+                      class="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar py-2"
+                    >
+                      {{ page.explore_departments }}
+                    </div>
+
+                    {# Mouseover Right Action Hotspot #}
+                    <div 
+                      @mouseenter="$refs.scrollContainer.scrollBy({ left: 250, behavior: 'smooth' })"
+                      class="absolute right-0 top-0 bottom-0 w-14 bg-gradient-to-l from-slate-950/60 to-transparent cursor-e-resize opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-end pr-2 text-white/50 font-bold"
+                      title="Scroll Right"
+                    >
+                      ➔
+                    </div>
+
+                    {# Mouseover Left Action Hotspot #}
+                    <div 
+                      @mouseenter="$refs.scrollContainer.scrollBy({ left: -250, behavior: 'smooth' })"
+                      class="absolute left-0 top-0 bottom-0 w-14 bg-gradient-to-r from-slate-950/60 to-transparent cursor-w-resize opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-start pl-2 text-white/50 font-bold"
+                      title="Scroll Left"
+                    >
+                    </div>
+
+                  </div>
+                {% else %}
+                  <p class="text-slate-500 text-sm italic">Assign your Taxonomy Block to the "Explore Departments" region.</p>
+                {% endif %}
+              </div>
+
+              {# Column 2: Quick Links & Issue Context #}
+              <div class="flex flex-col justify-between h-full bg-slate-900/40 p-6 rounded-xl">
+                <div>
+                  <h2 class="text-slate-400 text-xs font-black uppercase tracking-[0.3em] mb-8 border-b border-slate-700 pb-4">
+                    Minnesota Flyer
+                  </h2>
+                  <div class="grid grid-cols-2 gap-4">
+                    {# Menu content items drop here #}
+                  </div>
+                </div>
+
+                {# Bottom Editorial Branding #}
+                <div class="mt-20 md:mt-auto pt-8 border-t border-slate-800/60">
+                  <p class="text-slate-500 text-xs font-bold uppercase tracking-widest leading-loose">
+                    Minnesota Flyer Magazine<br>
+                    Continuing the legacy of Sherm Booen<br>
+                    Serving Midwest Aviation Since 1960
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </template>
+
+      </div> {# Closes .relative #}
+    </div> {# Closes .w-full bg-slate-800 #}
+
+    
+    {{ page.header }}
+  </header>
+
+  {# Navigation stream regions #}
+  {% if page.primary_menu or page.secondary_menu or page.breadcrumb %}
+    <div class="w-full max-w-7xl mx-auto px-4 mt-2">
+      {{ page.primary_menu }}
+      {{ page.secondary_menu }}
+      {{ page.breadcrumb }}
+    </div>
+  {% endif %}
+
+  {{ page.highlighted }}
+  {{ page.help }}
+
+  {# Main Layout Column Grid #}
+  <main role="main" class="w-full max-w-7xl mx-auto px-4 py-8 flex-grow">
+    <a id="main-content" tabindex="-1"></a>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      
+      {# Left Sidebar #}
+      {% if page.sidebar_first %}
+        <aside class="lg:col-span-1 order-2 lg:order-1" role="complementary">
+          {{ page.sidebar_first }}
+        </aside>
+      {% endif %}
+
+      {# Main Article / Product Content #}
+      <div class="layout-content order-1 {% if page.sidebar_first and page.sidebar_second %}lg:col-span-2{% elseif page.sidebar_first or page.sidebar_second %}lg:col-span-3{% else %}lg:col-span-4{% endif %}">
+        {{ page.content }}
+      </div>
+
+      {# Right Sidebar #}
+      {% if page.sidebar_second %}
+        <aside class="lg:col-span-1 order-3" role="complementary">
+          {{ page.sidebar_second }}
+        </aside>
+      {% endif %}
+
+    </div>
+  </main>
+
+  {# Bottom Subscription Fixed Overlay #}
+  <div class="fixed bottom-0 left-0 right-0 z-50 w-full overflow-x-hidden border-t border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur-md">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-4">
+      <div>
+        <h4 class="text-sm font-semibold text-slate-900">Subscriptions</h4>
+        <p class="text-xs text-slate-500">Annual subscription plans</p>
+      </div>
+      <div class="flex items-center gap-6">
+        <span class="text-xl font-bold text-slate-950">1-year, 2-year rates</span>
+        <a href="/subscribe" class="rounded-lg bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 transition-colors">
+          Complete your subscription
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% if page.footer %}
+    <footer role="contentinfo" class="w-full bg-slate-900 text-white py-12 mt-auto">
+      <div class="max-w-7xl mx-auto px-4">
+        {{ page.footer }}
+      </div>
+    </footer>
+  {% endif %}
+
+</div>

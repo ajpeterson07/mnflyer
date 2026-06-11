@@ -1,0 +1,37 @@
+{# commerce-product--subscription--full.html.twig #}
+
+<!-- The Screen-Filling Backdrop Wrapper -->
+<div class="flex min-h-[calc(100vh-120px)] w-full items-center justify-center p-4 bg-slate-50">
+  
+  <!-- The Big, Prominent Subscription Card -->
+  <div class="w-full max-w-2xl rounded-2xl border border-slate-200 bg-white p-8 shadow-2xl transition-all md:p-12">
+    
+    <!-- Header / Visual Anchor -->
+    <div class="text-center">
+      <span class="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10 mb-4">
+        Premium Access
+      </span>
+      
+      {# Dynamically render the Product Title #}
+      <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        {{ product.title.value }}
+      </h1>
+      
+      {# Dynamically render the Body field description #}
+      <div class="mt-4 text-base leading-7 text-slate-600 max-w-md mx-auto">
+        {{ product.body.value|raw }}
+      </div>
+    </div>
+
+    <!-- Core Pricing & Add to Cart Feature Display -->
+    <div class="mt-8 rounded-xl bg-slate-50 p-6 text-center border border-slate-100">
+      <p class="text-sm font-medium text-slate-500 uppercase tracking-wider">Plan Option</p>
+      
+      {# Dynamically render the variations pricing and the native Add to Cart Button #}
+      <div class="mt-4 custom-add-to-cart-wrapper">
+        {{ product.variations }}
+      </div>
+    </div>
+
+  </div>
+</div>

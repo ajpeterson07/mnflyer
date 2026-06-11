@@ -1,0 +1,52 @@
+{# page--user--register.html.twig #}
+
+{# Render the main system header if needed, or leave out for a clean, distraction-free landing #}
+{{ page.header }}
+
+<!-- The Screen-Filling Backdrop Wrapper -->
+<div class="flex min-h-[calc(100vh-120px)] w-full items-center justify-center p-4 bg-slate-50">
+  
+  <!-- The Big, Prominent Account Creation Card -->
+  <div class="w-full max-w-xl rounded-2xl border border-slate-200 bg-white p-8 shadow-2xl transition-all md:p-12">
+    
+    <!-- Header / Branding Anchor -->
+    <div class="text-center mb-8">
+      <span class="inline-flex items-center rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10 mb-4">
+        Join Minnesota Flyer
+      </span>
+      <h1 class="text-3xl font-bold tracking-tight text-slate-900">
+        Create Your Account
+      </h1>
+      <p class="mt-2 text-sm text-slate-500">
+        Set up your profile to manage your digital subscription.
+      </p>
+    </div>
+
+    <!-- System Messages (Crucial for validation errors/confirmations) -->
+    {% if page.highlighted or messages %}
+      <div class="mb-6 rounded-xl bg-amber-50 p-4 text-sm text-amber-800 border border-amber-100">
+        {{ page.highlighted }}
+        {{ messages }}
+      </div>
+    {% endif %}
+
+    <!-- Core Form Display -->
+    <div class="custom-register-form-wrapper">
+      {# This outputs the actual Drupal user registration form fields #}
+      {{ page.content }}
+    </div>
+
+    <!-- Helper Footer Links -->
+    <div class="mt-8 text-center border-t border-slate-100 pt-6">
+      <p class="text-xs text-slate-500">
+        Already have an account? 
+        <a href="/user/login" class="font-medium text-blue-600 hover:text-blue-500 underline underline-offset-4">
+          Log in here
+        </a>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+{{ page.footer }}
