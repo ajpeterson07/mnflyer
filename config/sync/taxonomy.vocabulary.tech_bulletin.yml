@@ -1,0 +1,9 @@
+uuid: 8152f5d9-3ca4-441c-be1b-37c4c7c3c9bb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Tech Bulletin'
+vid: tech_bulletin
+description: null
+weight: 0
+new_revision: false

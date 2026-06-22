@@ -1,0 +1,26 @@
+uuid: 0e396246-a9d1-4ff8-a750-b9e3caa0e02a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - mn_flyer
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: mn_flyer_content
+theme: mn_flyer
+region: content
+weight: -9
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '<front>'

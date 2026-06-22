@@ -1,0 +1,16 @@
+uuid: bb098cce-c88d-4e76-9a96-18e3390babd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+    - taxonomy.vocabulary.editorial
+id: editorial
+label: Editorial
+vocabulary: editorial
+menu: main
+expanded: false
+depth: 0
+menu_parent: 'admin:admin_toolbar_tools.extra_links:entity.taxonomy_vocabulary.overview_form.editorial'
+description_field_name: ''
+use_term_weight_order: true

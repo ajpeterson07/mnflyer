@@ -1,0 +1,22 @@
+uuid: 4923abe4-9dc0-4c0a-828a-c31c004e0245
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_ads
+  theme:
+    - mn_flyer
+id: mn_flyer_basicadblockbyplacement
+theme: mn_flyer
+region: sidebar_second
+weight: -8
+provider: null
+plugin: basic_ads_advertisement_block
+settings:
+  id: basic_ads_advertisement_block
+  label: 'Basic Ad: Content Bottom'
+  label_display: '0'
+  provider: basic_ads
+  ad_placement_term: '27'
+  count: 1
+visibility: {  }

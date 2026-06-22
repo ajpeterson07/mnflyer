@@ -1,0 +1,43 @@
+uuid: 8a3c2cc8-8dce-4d12-bcbd-fd1cd12496f8
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:958181b3-be92-41cf-b25a-8d33f957d328'
+  module:
+    - block_content
+    - commerce_product
+    - system
+  theme:
+    - mn_flyer
+id: mn_flyer_flyersupply
+theme: mn_flyer
+region: footer
+weight: -8
+provider: null
+plugin: 'block_content:958181b3-be92-41cf-b25a-8d33f957d328'
+settings:
+  id: 'block_content:958181b3-be92-41cf-b25a-8d33f957d328'
+  label: 'Flyer Supply'
+  label_display: visible
+  provider: block_content
+  view_mode: full
+visibility:
+  'entity_bundle:commerce_product':
+    id: 'entity_bundle:commerce_product'
+    negate: false
+    context_mapping:
+      commerce_product: '@commerce_product.product_route_context:commerce_product'
+    bundles:
+      subscription: subscription
+  'entity_bundle:commerce_product_variation':
+    id: 'entity_bundle:commerce_product_variation'
+    negate: false
+    context_mapping:
+      commerce_product_variation: '@commerce_product.product_variation_route_context:commerce_product_variation'
+    bundles:
+      subscription: subscription
+  request_path:
+    id: request_path
+    negate: true
+    pages: ''

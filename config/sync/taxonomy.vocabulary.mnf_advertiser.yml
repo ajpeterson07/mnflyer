@@ -1,0 +1,9 @@
+uuid: 326f7748-adf5-4863-8825-216c7719b9dd
+langcode: en
+status: true
+dependencies: {  }
+name: Advertisers
+vid: mnf_advertiser
+description: null
+weight: 0
+new_revision: false

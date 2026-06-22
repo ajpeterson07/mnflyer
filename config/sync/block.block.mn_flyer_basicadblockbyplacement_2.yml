@@ -1,0 +1,22 @@
+uuid: f69bca8e-20f5-4e32-9e3d-593109dca60a
+langcode: en
+status: true
+dependencies:
+  module:
+    - basic_ads
+  theme:
+    - mn_flyer
+id: mn_flyer_basicadblockbyplacement_2
+theme: mn_flyer
+region: sidebar_second
+weight: 0
+provider: null
+plugin: basic_ads_advertisement_block
+settings:
+  id: basic_ads_advertisement_block
+  label: 'Basic Ad: Sidebar'
+  label_display: '0'
+  provider: basic_ads
+  ad_placement_term: '24'
+  count: 3
+visibility: {  }

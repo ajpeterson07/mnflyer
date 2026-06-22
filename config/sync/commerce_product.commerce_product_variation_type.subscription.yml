@@ -1,0 +1,11 @@
+uuid: c6a54f38-d1e2-48b3-94f5-485ed62f2074
+langcode: en
+status: true
+dependencies: {  }
+id: subscription
+label: Subscription
+traits:
+  - purchasable_entity_subscription
+locked: false
+orderItemType: subscription_item
+generateTitle: false

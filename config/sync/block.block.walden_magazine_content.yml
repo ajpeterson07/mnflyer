@@ -1,0 +1,22 @@
+uuid: b5a8edfe-302e-4585-9286-3413dff742ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - walden_magazine
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: walden_magazine_content
+theme: walden_magazine
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

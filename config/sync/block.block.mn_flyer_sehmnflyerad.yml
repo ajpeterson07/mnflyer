@@ -1,0 +1,23 @@
+uuid: 8e3c5316-6e90-46fb-8911-cf717b6ec685
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c010cb0d-8fc1-40ea-b97e-0557a50c0791'
+  module:
+    - block_content
+  theme:
+    - mn_flyer
+id: mn_flyer_sehmnflyerad
+theme: mn_flyer
+region: sidebar_second
+weight: -9
+provider: null
+plugin: 'block_content:c010cb0d-8fc1-40ea-b97e-0557a50c0791'
+settings:
+  id: 'block_content:c010cb0d-8fc1-40ea-b97e-0557a50c0791'
+  label: 'SEH MN Flyer Ad '
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

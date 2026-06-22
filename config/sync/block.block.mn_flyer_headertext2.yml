@@ -1,0 +1,23 @@
+uuid: aaf45065-3764-40e2-aa81-f8582c1dad8b
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:baf5a3f4-f9aa-4029-801f-1499cecd2dbb'
+  module:
+    - block_content
+  theme:
+    - mn_flyer
+id: mn_flyer_headertext2
+theme: mn_flyer
+region: header
+weight: -7
+provider: null
+plugin: 'block_content:baf5a3f4-f9aa-4029-801f-1499cecd2dbb'
+settings:
+  id: 'block_content:baf5a3f4-f9aa-4029-801f-1499cecd2dbb'
+  label: 'header text 2'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+visibility: {  }

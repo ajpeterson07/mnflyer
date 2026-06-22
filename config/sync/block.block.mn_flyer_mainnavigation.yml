@@ -1,0 +1,25 @@
+uuid: 66702a43-01c5-4fb9-beb4-c1448e3a103e
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - mn_flyer
+id: mn_flyer_mainnavigation
+theme: mn_flyer
+region: explore_departments
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

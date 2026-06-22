@@ -250,3 +250,20 @@ select {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.recent-links a {
+  color: white;
+  text-decoration: none;
+}
+.block-views-blockrecent-stories-recent-stories h2{
+  display:none;
+}
+.image-style-thumbnail {
+  margin-right: 1.5rem; /* Space between image and text */
+  margin-bottom: 1rem;  /* Space between image and text below */
+  border-radius: .3rem;
+  box-shadow: .5rem;
+}
+a {
+    text-decoration: none !important;
+}

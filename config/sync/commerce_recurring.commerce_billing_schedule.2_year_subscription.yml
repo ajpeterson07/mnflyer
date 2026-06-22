@@ -1,0 +1,22 @@
+uuid: 4bbc0248-eb59-433e-bd01-300ac26d5f0b
+langcode: en
+status: true
+dependencies: {  }
+id: 2_year_subscription
+label: '2-Year Subscription'
+displayLabel: 'MN FLYER TWO YEAR SUBSCRIPTION'
+billingType: prepaid
+combineSubscriptions: false
+retrySchedule:
+  - 1
+  - 3
+  - 5
+unpaidSubscriptionState: canceled
+plugin: rolling
+configuration:
+  trial_interval: {  }
+  interval:
+    number: 1
+    unit: year
+prorater: proportional
+proraterConfiguration: {  }

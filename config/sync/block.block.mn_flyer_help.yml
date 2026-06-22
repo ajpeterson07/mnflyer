@@ -1,0 +1,22 @@
+uuid: 2126994c-5e00-4dc8-ab14-e6f9b295d524
+langcode: en
+status: false
+dependencies:
+  module:
+    - help
+  theme:
+    - mn_flyer
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: mn_flyer_help
+theme: mn_flyer
+region: sidebar_first
+weight: -10
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

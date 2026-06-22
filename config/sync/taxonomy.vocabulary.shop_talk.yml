@@ -1,0 +1,9 @@
+uuid: 8710ce9a-779e-43eb-9dc2-07b86491aa52
+langcode: en
+status: true
+dependencies: {  }
+name: 'Shop Talk with Trent Wallman'
+vid: shop_talk
+description: null
+weight: 0
+new_revision: false

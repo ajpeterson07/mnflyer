@@ -1,0 +1,21 @@
+uuid: 0f525fc4-4de9-4c1f-9ad6-4c2ba5f69af1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ad_end_date
+    - node.type.basic_ad
+  module:
+    - datetime
+id: node.basic_ad.field_ad_end_date
+field_name: field_ad_end_date
+entity_type: node
+bundle: basic_ad
+label: 'End Date'
+description: 'When should this ad stop displaying? Leave empty for no end date.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

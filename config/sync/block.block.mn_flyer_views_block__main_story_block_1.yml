@@ -1,0 +1,24 @@
+uuid: 77c2402c-e3eb-45c2-8720-d63f9c2b57aa
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.main_story
+  module:
+    - views
+  theme:
+    - mn_flyer
+id: mn_flyer_views_block__main_story_block_1
+theme: mn_flyer
+region: header
+weight: -8
+provider: null
+plugin: 'views_block:main_story-block_1'
+settings:
+  id: 'views_block:main_story-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility: {  }

@@ -1,0 +1,9 @@
+uuid: 32b1eb59-3115-42d9-833c-df69af302dcd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Readers Page'
+vid: readers_page
+description: null
+weight: 0
+new_revision: false

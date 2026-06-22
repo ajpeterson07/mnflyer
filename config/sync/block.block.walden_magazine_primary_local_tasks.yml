@@ -1,0 +1,22 @@
+uuid: 1fd06775-175a-4793-bce1-67ef3c9b061a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - walden_magazine
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: walden_magazine_primary_local_tasks
+theme: walden_magazine
+region: highlighted
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

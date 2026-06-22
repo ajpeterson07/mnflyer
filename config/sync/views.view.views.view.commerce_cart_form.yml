@@ -1,0 +1,28 @@
+uuid: 2827a7a2-96cd-4c29-b533-0ddd87641463
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_cart
+    - commerce_order
+    - views
+id: views.view.commerce_cart_form
+label: 'Commerce Cart form'
+module: commerce_cart
+description: 'Displays the commerce cart form.'
+tag: Commerce
+base_table: commerce_order
+base_field: order_id
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      fields:
+        order_id:
+          id: order_id
+          table: commerce_order
+          field: order_id
+          plugin_id: standard

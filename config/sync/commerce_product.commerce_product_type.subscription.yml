@@ -1,0 +1,14 @@
+uuid: ac5d414f-dc57-4be8-a455-e101ca1e1987
+langcode: en
+status: true
+dependencies: {  }
+id: subscription
+label: Subscription
+traits: {  }
+locked: false
+description: 'MN Flyer Subscription'
+variationType: subscription
+variationTypes:
+  - subscription
+multipleVariations: true
+injectVariationFields: true

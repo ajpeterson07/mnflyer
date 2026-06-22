@@ -1,0 +1,22 @@
+uuid: 97bbe8f9-57ce-4a5b-912c-8abe1c9cabc4
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - mn_flyer
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: mn_flyer_powered
+theme: mn_flyer
+region: sidebar_first
+weight: -9
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }
