@@ -1,9 +1,0 @@
-uuid: 610408b8-4ca2-4aff-9849-20e2e5a1e75d
-langcode: en
-status: true
-dependencies: {  }
-name: Editorial
-vid: editorial
-description: null
-weight: 0
-new_revision: false

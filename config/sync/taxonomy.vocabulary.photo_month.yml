@@ -1,9 +1,0 @@
-uuid: a1097c9c-4001-46c5-aa4d-a3a21a163821
-langcode: en
-status: true
-dependencies: {  }
-name: 'Aviation Photo of the Month'
-vid: photo_month
-description: null
-weight: 0
-new_revision: false

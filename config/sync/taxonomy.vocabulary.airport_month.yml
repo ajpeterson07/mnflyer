@@ -1,9 +1,0 @@
-uuid: cdf02a37-a02d-4496-8a2a-f0dffdc29a10
-langcode: en
-status: true
-dependencies: {  }
-name: 'Airport of the Month'
-vid: airport_month
-description: null
-weight: 0
-new_revision: false

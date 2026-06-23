@@ -1,5 +1,0 @@
-webhook_event:
-  version: VERSION
-  css:
-    component:
-      css/commerce_stripe_webhook_event.module.css: {}

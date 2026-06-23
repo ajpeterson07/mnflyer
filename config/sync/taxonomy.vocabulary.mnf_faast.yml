@@ -1,9 +1,0 @@
-uuid: 35e4b1e7-b1fd-4a90-a462-3b7ed8ea8dbb
-langcode: en
-status: true
-dependencies: {  }
-name: Faast
-vid: mnf_faast
-description: null
-weight: 0
-new_revision: false

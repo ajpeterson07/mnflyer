@@ -1,9 +1,0 @@
-uuid: ec4571ed-5611-4ccf-bccd-66910ac7339d
-langcode: en
-status: true
-dependencies: {  }
-name: 'Mystery Airplane'
-vid: mystery_airplane
-description: null
-weight: 0
-new_revision: false

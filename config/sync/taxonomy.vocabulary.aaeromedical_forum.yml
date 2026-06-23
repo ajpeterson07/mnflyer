@@ -1,9 +1,0 @@
-uuid: b7a41d27-25b0-452c-a840-5b64f385bd81
-langcode: en
-status: true
-dependencies: {  }
-name: 'Aeromedical Forum'
-vid: aaeromedical_forum
-description: null
-weight: 0
-new_revision: false

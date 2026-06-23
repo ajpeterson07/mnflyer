@@ -1,9 +1,0 @@
-uuid: a47320e2-3a21-47d0-9de1-8c73d95c76ba
-langcode: en
-status: true
-dependencies: {  }
-id: subscriber
-label: Subscriber
-weight: 4
-is_admin: false
-permissions: {  }

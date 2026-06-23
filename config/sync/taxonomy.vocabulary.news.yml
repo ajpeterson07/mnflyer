@@ -1,9 +1,0 @@
-uuid: 44c16a40-68a7-4e45-a800-0bf7e0419451
-langcode: en
-status: true
-dependencies: {  }
-name: News
-vid: news
-description: null
-weight: 0
-new_revision: false

@@ -1,3 +1,0 @@
-commerce_stripe:
-  label: Stripe
-  entity_type: commerce_order

@@ -1,9 +1,0 @@
-uuid: acc30983-7f5c-4cd8-bd24-eac815824f24
-langcode: en
-status: true
-dependencies: {  }
-id: subscription
-label: Subscription
-traits: {  }
-locked: false
-description: 'MN Flyer subscriptions'
