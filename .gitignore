@@ -1,0 +1,15 @@
+# Ignore core and vendor directories
+/vendor/
+/web/core/
+/web/modules/contrib/
+/web/themes/contrib/
+/web/profiles/contrib/
+
+# Ignore sensitive settings and files
+/web/sites/default/settings.php
+/web/sites/default/settings.local.php
+/web/sites/default/files/
+
+# Ignore IDE and OS files
+.idea/
+.DS_Store

@@ -1,0 +1,9 @@
+uuid: 4014cbb1-d0d7-4df7-8ba3-2893815e95a4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic Ad Placement'
+vid: basic_ad_placement
+description: 'Defines where basic advertisements can be displayed on the site.'
+weight: 0
+new_revision: false

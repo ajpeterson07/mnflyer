@@ -1,0 +1,11 @@
+uuid: 86f83cef-03bb-4b9b-a3e5-d55c4946972f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic Ad'
+type: basic_ad
+description: 'Create and manage advertisements for the site.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false
